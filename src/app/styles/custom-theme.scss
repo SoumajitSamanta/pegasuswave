@@ -1,0 +1,23 @@
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes/default';
+
+$custom-theme: nb-theme(
+  (
+    color-primary-100: #e6e7ee,
+    color-primary-200: #c6c8d1,
+    color-primary-300: #a7aab3,
+    color-primary-400: #898c96,
+    color-primary-500: #6b6e78,
+    color-primary-600: #55565f,
+    color-primary-700: #404046,
+    color-primary-800: #2b2c2e,
+    color-primary-900: #171718,
+    color-primary: #e6e7ee,
+    color-info: #a4c8f0,
+    color-success: #76c7c0,
+    color-warning: #ffdd87,
+    color-danger: #f17a7a,
+  )
+);
+
+@import '~@nebular/theme/styles/globals';
