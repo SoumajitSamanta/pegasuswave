@@ -7,10 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pegasuswave';
-  menuItems = [
-    {
-      title: 'Home',
-      link: '/home',
-      icon: 'home-outline',
-    }];
 }
