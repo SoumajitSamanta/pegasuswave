@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NbCardModule, NbLayoutModule, NbMenuModule, NbSidebarModule, NbThemeModule } from '@nebular/theme';
+import { NbCardModule, NbFormFieldModule, NbIconModule, NbLayoutModule, NbMenuModule, NbSidebarModule, NbThemeModule } from '@nebular/theme';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 @NgModule({
@@ -18,7 +18,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbLayoutModule,
-    NbCardModule
+    NbCardModule,NbIconModule,NbFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
