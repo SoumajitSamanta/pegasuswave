@@ -1,7 +1,7 @@
 <nav #nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
     <div class="container">
         <div class="navbar-translate">
-            <a class="navbar-brand" href="https://www.creative-tim.com">Pegasus Wave</a>
+            <a class="navbar-brand" href="#"><img style="width: 70px;height: auto; border-radius: 50%" src="./assets/img/pgwhite.png" alt="Wave Broadband Logo" /></a>
             <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse"
                 data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                 aria-label="Toggle navigation" (click)="sidebarToggle()">
@@ -10,30 +10,46 @@
                 <span class="navbar-toggler-bar"></span>
             </button>
         </div>
-        <div class="navbar-collapse" id="navbarToggler">
+        <div class="navbar-collapse" style="justify-content: flex-end" id="navbarToggler">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                        <p class="d-lg-none">Twitter</p>
+                    <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="#"
+                        target="_blank">
+                        <!-- <i class="fab fa-twitter"></i>
+                        <p class="d-lg-none">Twitter</p> -->
+                        Home
                     </a>
                 </li>
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
-                        <i class="fab fa-facebook-square"></i>
-                        <p class="d-lg-none">Facebook</p>
+                    <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="#"
+                        target="_blank">
+                        <!-- <i class="fab fa-facebook-square"></i>
+                        <p class="d-lg-none">Facebook</p> -->
+                        Packages
                     </a>
                 </li>
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                        <p class="d-lg-none">Instagram</p>
+                    <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="#"
+                        target="_blank">
+                        <!-- <i class="fab fa-instagram"></i>
+                        <p class="d-lg-none">Instagram</p> -->
+                        OTT
                     </a>
                 </li>
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="https://www.github.com/CreativeTimOfficial/paper-kit-2-angular" target="_blank">
-                        <i class="fab fa-github"></i>
-                        <p class="d-lg-none">GitHub</p>
+                    <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="#"
+                        target="_blank">
+                        <!-- <i class="fab fa-github"></i>
+                        <p class="d-lg-none">GitHub</p> -->
+                        Contact
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="#"
+                        target="_blank">
+                        <!-- <i class="fab fa-github"></i>
+                        <p class="d-lg-none">GitHub</p> -->
+                        Profile
                     </a>
                 </li>
             </ul>
@@ -42,17 +58,22 @@
 </nav>
 
 
-<div class="page-header" data-parallax="true" style="background-image: url('./assets/img/pglanding.png');">
+<div class="page-header" data-parallax="true" style="background-image: url('./assets/img/pg.jpg'); opacity: 0.95">
     <div class="filter"></div>
     <div class="container">
-        <div class="motto text-center">
-            <h1 style="font-weight: bold;">Experience Blazing-Fast, Reliable, and Affordable Internet</h1>
-            <h3 style="margin:5vh 20vw;">Stay connected with lightning-fast internet, unbeatable reliability, and seamless streaming for your home or business.</h3>
+        <div class="motto text-center d-flex row justify-content-center">
+            <h1 style="font-weight: bold;">Welcome to PegasusWave</h1>
+            <p style="margin:5vh 15vw;">Stay connected with lightning-fast internet, unbeatable reliability, and
+                seamless streaming for your home or business.</p>
             <br />
             <!-- <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-outline-neutral btn-round"><i
                     class="fa fa-play"></i>Watch video</a> -->
-                
-            <button type="button" class="btn btn-outline-neutral btn-round">Check Availability</button>
+
+            <div class="search-container">
+                <input type="text" placeholder="Enter Your Zip Code" class="search-input" />
+                <button class="search-button btn-submit">Check Availability</button>
+            </div>
+            
         </div>
     </div>
 </div>
@@ -61,19 +82,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mr-auto ml-auto">
-                    <h2 class="title">Let's talk product</h2>
+                    <h2 class="title">About Us</h2>
                     <h5 class="description">This is the paragraph where you can write more details about your product.
                         Keep you user engaged by providing meaningful information. Remember that by this time, the user
                         is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see
                         more.</h5>
                     <br>
-                    <a href="#paper-kit" class="btn btn-danger btn-round">See Details</a>
+                    <!-- <a href="#paper-kit" class="btn btn-danger btn-round">See Details</a> -->
                 </div>
             </div>
             <br /><br />
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="info">
+            <h2 class="title">What Make Us Different</h2>
+            <div class="row" style="justify-content: center;">
+                <div class="col-md-3 head-description">
+                    <div class="info ">
                         <div class="icon icon-danger">
                             <i class="nc-icon nc-album-2"></i>
                         </div>
@@ -81,11 +103,11 @@
                             <h4 class="info-title">Beautiful Gallery</h4>
                             <p class="description">Spend your time generating new ideas. You don't have to think of
                                 implementing.</p>
-                            <a href="#pkp" class="btn btn-link btn-danger">See more</a>
+                            <!-- <a href="#pkp" class="btn btn-link btn-danger">See more</a> -->
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 head-description">
                     <div class="info">
                         <div class="icon icon-danger">
                             <i class="nc-icon nc-bulb-63"></i>
@@ -93,11 +115,11 @@
                         <div class="description">
                             <h4 class="info-title">New Ideas</h4>
                             <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient.</p>
-                            <a href="#pkp" class="btn btn-link btn-danger">See more</a>
+                            <!-- <a href="#pkp" class="btn btn-link btn-danger">See more</a> -->
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <!-- <div class="col-md-3 head-description">
                     <div class="info">
                         <div class="icon icon-danger">
                             <i class="nc-icon nc-chart-bar-32"></i>
@@ -108,8 +130,8 @@
                             <a href="#pkp" class="btn btn-link btn-danger">See more</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3">
+                </div> -->
+                <div class="col-md-3 head-description">
                     <div class="info">
                         <div class="icon icon-danger">
                             <i class="nc-icon nc-sun-fog-29"></i>
@@ -117,7 +139,7 @@
                         <div class="description">
                             <h4 class="info-title">Delightful design</h4>
                             <p>Find unique and handmade delightful designs related items directly from our sellers.</p>
-                            <a href="#pkp" class="btn btn-link btn-danger">See more</a>
+                            <!-- <a href="#pkp" class="btn btn-link btn-danger">See more</a> -->
                         </div>
                     </div>
                 </div>
