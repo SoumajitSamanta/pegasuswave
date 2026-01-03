@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pegasuswave';
+ isLoading = true;
+
+ngAfterViewInit() {
+  setTimeout(() => {
+    this.isLoading = false;
+  }, 1000);
+}
+
 }
