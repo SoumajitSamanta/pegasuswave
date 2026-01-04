@@ -38,7 +38,8 @@
               "src/assets/css/demo.css",
               "src/assets/css/nucleo-icons.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "baseHref": "/pegasuswave/"
           },
           "configurations": {
             "production": {
