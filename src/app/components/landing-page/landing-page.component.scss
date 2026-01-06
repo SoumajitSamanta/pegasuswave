@@ -61,3 +61,184 @@ button {
         color: #a58d8d !important;
     }
 }
+.features {
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 10px;
+  background: #f0f0f0ad;
+    position: relative; /* Essential for positioning the pseudo-elements */
+    overflow: hidden;   /* Keeps the spinning animation inside the box */
+    z-index: 1;
+  transform: translateY(-5px);
+ box-shadow: 0 10px 30px rgba(98, 97, 97, 0.429);
+}
+.package-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent, 
+        transparent, 
+        transparent, 
+        #790505
+    );
+    z-index: -2;
+    transform-origin: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s;
+}
+
+/* The Trigger: Show and Animate on Hover */
+.package-card:hover::before {
+    opacity: 1;
+    animation: rotate-border 4s linear infinite;
+}
+
+/* The Inner Mask (To make the center white again) */
+.package-card::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    /* This 'inset' value determines the border thickness */
+    inset: 3px; 
+    background: #fff;
+    border-radius: 8px; /* Slightly less than parent radius */
+}
+
+/* The Rotation Animation */
+@keyframes rotate-border {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  margin-bottom: 0.5rem;
+}
+/* --- ICON LAUNCH ANIMATION --- */
+
+/* Ensure the icon can be moved */
+.icon {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+/* Trigger animation when hovering the card */
+.feature-card:hover .icon{
+    animation: blast-off 1s ease-in-out;
+}
+
+/* The Animation Sequence */
+@keyframes blast-off {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    20% {
+        transform: translateY(10px); /* Dip down slightly (Anticipation) */
+    }
+    40% {
+        transform: translateY(-60px) scale(1.2); /* Fly Up */
+        opacity: 0; /* Fade out */
+    }
+    41% {
+        transform: translateY(60px) scale(0.5); /* Reset to bottom instantly */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1); /* Land back in center */
+        opacity: 1;
+    }
+}
+ .footer { background: black; color: #888; padding: 3rem 5%; text-align: center; }
+        .footer p { margin-top: 1rem; font-size: 0.9rem; }
+.package-row{
+    margin-top: 5rem; 
+    margin-bottom: 5rem;
+}
+.package-card{
+    background: transparent;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+     position: relative; /* Essential for positioning the pseudo-elements */
+    overflow: hidden;   /* Keeps the spinning animation inside the box */
+    z-index: 1;
+    //box-shadow: 0 10px 30px rgba(162, 94, 125, 0.679);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.package-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(149, 139, 143, 0.779);
+}
+.package-card h3{
+    margin-bottom: 1rem;
+}
+.package-card ul{
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+.package-card ul li{
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+.package-card .btn-select{
+    background-color: #c73c5f;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+.package-card .btn-select:hover{
+    background-color: #a8324f;
+}
+.package-card .price{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.package-card .duration{
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+.head-description{
+    border: 1px solid #790505;
+    border-radius: 10px;
+    margin: 10px 20px;
+}
+.head-description:hover{
+    background-color: #650c0c;
+    //color: #fff !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    .description{
+        color: #fff !important;
+    }
+    .info-title{
+        color: #a58d8d !important;
+    }
+}
+
