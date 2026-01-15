@@ -164,6 +164,7 @@
         </div>
     </section>
 
+
     <section class="logo-scroll-section" slide="up" style="--delay: 0.15s">
         <div class="container">
             <h2 class="title text-center mb-4">Trusted By</h2>
@@ -175,6 +176,22 @@
             </div>
         </div>
     </section>
+    <section class="review-section">
+  <div class="container">
+    <h2 class="title text-center mb-4">What Our Customers Say</h2>
+
+    <div class="review-slider">
+      <div class="review-track" #reviewTrack>
+        <div class="review-card" *ngFor="let review of reviews">
+          <p class="review-text">“{{ review.text }}”</p>
+          <h5 class="review-name">{{ review.name }}</h5>
+          <span class="review-role">{{ review.role }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <section class="footer">
         <div class="container">

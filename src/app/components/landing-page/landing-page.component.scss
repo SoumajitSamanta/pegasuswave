@@ -324,6 +324,43 @@ button {
 .logo-track img:hover {
   opacity: 1;
 }
+.review-section {
+  padding: 70px 0;
+  background: #f8f9fa;
+}
+
+.review-slider {
+  overflow: hidden;
+}
+
+.review-track {
+  display: flex;
+  gap: 24px;
+  will-change: transform;
+}
+
+.review-card {
+  min-width: 320px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.review-text {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.review-name {
+  font-weight: 600;
+}
+
+.review-role {
+  font-size: 12px;
+  color: #777;
+}
+
 
 
 

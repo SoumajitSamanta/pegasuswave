@@ -45,6 +45,7 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
       }
     });
     requestAnimationFrame(() => this.animate());
+    this.startDrag();
   }
   sidebarOpen() {
     const toggleButton = this.toggleButton;
@@ -141,5 +142,78 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
     }
 
     requestAnimationFrame(() => this.animate());
+  }
+  
+  @ViewChild('reviewTrack', { static: true })
+  reviewTrack!: ElementRef<HTMLDivElement>;
+
+  reviews = [
+    {
+      text: 'Excellent speed and reliable connection!',
+      name: 'Amit Sharma',
+      role: 'Software Engineer',
+    },
+    {
+      text: 'Best broadband service in my area.',
+      name: 'Neha Verma',
+      role: 'Content Creator',
+    },
+    {
+      text: 'Low latency and great customer support.',
+      name: 'Rohit Das',
+      role: 'Gamer',
+    },
+    {
+      text: 'Perfect for work-from-home needs.',
+      name: 'Priya Sen',
+      role: 'UX Designer',
+    },
+  ];
+
+   private intervalId!: number;
+  private index = 0;
+  private cardWidth = 0;
+  private totalCards = 0;
+
+  startDrag(): void {
+     const track = this.reviewTrack.nativeElement;
+
+    // 1️⃣ Clone ALL cards once
+    const cards = Array.from(track.children);
+    cards.forEach(card => {
+      track.appendChild(card.cloneNode(true));
+    });
+
+    this.totalCards = cards.length;
+
+    // 2️⃣ Calculate width (including gap)
+    this.cardWidth = (track.children[0] as HTMLElement).offsetWidth + 24;
+
+    // 3️⃣ Start step-based auto scroll
+    this.intervalId = window.setInterval(() => {
+      this.move();
+    }, 1000);
+  }
+
+  move(): void {
+    const track = this.reviewTrack.nativeElement;
+    this.index++;
+
+    // Small drag/snap effect
+    track.style.transition = 'transform 160ms cubic-bezier(0.4, 0, 0.2, 1)';
+    track.style.transform = `translateX(-${this.index * this.cardWidth}px)`;
+
+    // 4️⃣ Seamless reset at midpoint
+    if (this.index === this.totalCards) {
+      setTimeout(() => {
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(0)';
+        this.index = 0;
+      }, 170);
+    }
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.intervalId);
   }
 }
