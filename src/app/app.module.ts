@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NbCardModule, NbFormFieldModule, NbIconModule, NbLayoutModule, NbMenuModule, NbSidebarModule, NbThemeModule } from '@nebular/theme';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { SlideUpDirective } from './shared/directives/slide-up.directive';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
   ],
   imports: [
     BrowserModule,
+    SlideUpDirective,
     AppRoutingModule,
     NbThemeModule.forRoot({ name: 'corporate' }),
     NbSidebarModule.forRoot(),

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @Component({
@@ -6,7 +6,7 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
-export class LandingPageComponent implements OnInit {
+export class LandingPageComponent implements OnInit, AfterViewInit {
   focus: any;
   focus1: any;
   private toggleButton: any;
@@ -15,7 +15,7 @@ export class LandingPageComponent implements OnInit {
   @ViewChild('nav', { static: false }) navbar!: ElementRef;
 
 
-  constructor(public location: Location, private element: ElementRef, private renderer : Renderer2,) {
+  constructor(public location: Location, private element: ElementRef, private renderer: Renderer2,) {
     this.sidebarVisible = false;
   }
 
@@ -23,18 +23,18 @@ export class LandingPageComponent implements OnInit {
   ngOnInit() {
     const navbar: HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
-       this.renderer.listen('window', 'scroll', (event) => {
-            const number = window.scrollY;
-            if (number > 150 || window.pageYOffset > 150) {
-                // add logic
-                navbar.classList.remove('navbar-transparent');
-            } else {
-                // remove logic
-                navbar.classList.add('navbar-transparent');
-            }
-        });
+    this.renderer.listen('window', 'scroll', (event) => {
+      const number = window.scrollY;
+      if (number > 150 || window.pageYOffset > 150) {
+        // add logic
+        navbar.classList.remove('navbar-transparent');
+      } else {
+        // remove logic
+        navbar.classList.add('navbar-transparent');
+      }
+    });
   }
-   ngAfterViewInit(): void {
+  ngAfterViewInit(): void {
     this.renderer.listen('window', 'scroll', () => {
       const scrollPosition = window.scrollY || window.pageYOffset;
 
@@ -44,6 +44,7 @@ export class LandingPageComponent implements OnInit {
         this.renderer.addClass(this.navbar.nativeElement, 'navbar-transparent');
       }
     });
+    requestAnimationFrame(() => this.animate());
   }
   sidebarOpen() {
     const toggleButton = this.toggleButton;
@@ -74,18 +75,18 @@ export class LandingPageComponent implements OnInit {
       this.sidebarClose();
     }
   };
-      isHome() {
-      var titlee = this.location.prepareExternalUrl(this.location.path());
-      if(titlee.charAt(0) === '#'){
-          titlee = titlee.slice( 1 );
-      }
-        if( titlee === '/home' ) {
-            return true;
-        }
-        else {
-            return false;
-        }
+  isHome() {
+    var titlee = this.location.prepareExternalUrl(this.location.path());
+    if (titlee.charAt(0) === '#') {
+      titlee = titlee.slice(1);
     }
+    if (titlee === '/home') {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
   isDocumentation() {
     var titlee = this.location.prepareExternalUrl(this.location.path());
     if (titlee.charAt(0) === '#') {
@@ -97,5 +98,48 @@ export class LandingPageComponent implements OnInit {
     else {
       return false;
     }
+  }
+   @ViewChild('track', { static: true })
+  track!: ElementRef<HTMLDivElement>;
+
+  logos = [
+    './assets/img/placeholder.jpg',
+    './assets/img/placeholder.jpg',
+    './assets/img/placeholder.jpg',
+    './assets/img/placeholder.jpg',
+    './assets/img/placeholder.jpg',
+    './assets/img/placeholder.jpg',
+    './assets/img/placeholder.jpg',
+    './assets/img/placeholder.jpg',
+    './assets/img/placeholder.jpg',
+    './assets/img/placeholder.jpg',
+    './assets/img/placeholder.jpg',
+    './assets/img/placeholder.jpg',
+    './assets/img/placeholder.jpg',
+    './assets/img/placeholder.jpg',
+    './assets/img/placeholder.jpg',
+    './assets/img/placeholder.jpg',
+  ];
+
+  private position = 0;
+  private speed = 0.4; // px per frame
+
+  animate(): void {
+    const trackEl = this.track.nativeElement;
+    const firstLogo = trackEl.children[0] as HTMLElement;
+
+    this.position -= this.speed;
+    trackEl.style.transform = `translateX(${this.position}px)`;
+
+    if (firstLogo) {
+      const logoWidth = firstLogo.offsetWidth + 60; // include gap
+
+      if (Math.abs(this.position) >= logoWidth) {
+        trackEl.appendChild(firstLogo);
+        this.position += logoWidth;
+      }
+    }
+
+    requestAnimationFrame(() => this.animate());
   }
 }

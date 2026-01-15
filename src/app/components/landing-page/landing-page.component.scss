@@ -241,4 +241,89 @@ button {
         color: #a58d8d !important;
     }
 }
+.footer {
+  background: #000b18;
+  color: #ffffff;
+  padding: 60px 0 20px;
+}
+
+.footer-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.footer-list,
+.footer-social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li,
+.footer-social li {
+  margin-bottom: 8px;
+}
+
+.footer a {
+  color: #b4a9b9;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
+.footer-text {
+  color: #b4a9b9;
+  font-size: 14px;
+}
+
+.footer-subscribe input {
+  border-radius: 4px;
+}
+.footer-company {
+  max-width: 260px;
+}
+
+.footer-logo {
+  height: 130px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.footer-company-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #b4a9b9;
+}
+.logo-scroll-section {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.logo-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  will-change: transform;
+}
+
+.logo-track img {
+  height: 50px;
+  flex-shrink: 0;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.logo-track img:hover {
+  opacity: 1;
+}
+
+
 
