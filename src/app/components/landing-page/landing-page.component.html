@@ -53,6 +53,11 @@
                         Profile
                     </a>
                 </li>
+                <!-- <li class="nav-item" *ngIf="!isDocumentation()">
+                    <button class="diagonal-btn btn-dark custon-btn-css">
+                        <span>Log In</span>
+                    </button>
+                </li> -->
             </ul>
         </div>
     </div>
@@ -69,7 +74,9 @@
             <br />
             <div class="search-container">
                 <input type="text" placeholder="Enter Your Zip Code" class="search-input" />
-                <button class="search-button btn-submit">Check Availability</button>
+                <button class="search-button diagonal-btn btn-red">
+                    <span>Check Availability</span>
+                </button>
             </div>
 
         </div>
@@ -163,6 +170,38 @@
 
         </div>
     </section>
+    <section class="ott-section" slide="up" style="--delay: 0.15s">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- Left Content -->
+                <div class="col-lg-6 col-md-12 ott-content">
+                    <h2 class="ott-title">
+                        Enjoy unlimited <br />
+                        <span>entertainment</span>
+                    </h2>
+
+                    <p class="ott-description">
+                        Enjoy 400+ live channels and 8+ OTT apps as optional add-ons
+                        with your ACT Fibernet
+                    </p>
+
+                    <button class="diagonal-btn btn-red">
+                        <span>GET A CONNECTION</span>
+                    </button>
+
+
+                </div>
+
+                <!-- Right Image -->
+                <div class="col-lg-6 col-md-12 text-center">
+                    <img src="assets/images/ott-tv.png" alt="OTT Entertainment" class="ott-image" />
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 
 
     <section class="logo-scroll-section" slide="up" style="--delay: 0.15s">
@@ -177,20 +216,20 @@
         </div>
     </section>
     <section class="review-section">
-  <div class="container">
-    <h2 class="title text-center mb-4">What Our Customers Say</h2>
+        <div class="container">
+            <h2 class="title text-center mb-4">What Our Customers Say</h2>
 
-    <div class="review-slider">
-      <div class="review-track" #reviewTrack>
-        <div class="review-card" *ngFor="let review of reviews">
-          <p class="review-text">“{{ review.text }}”</p>
-          <h5 class="review-name">{{ review.name }}</h5>
-          <span class="review-role">{{ review.role }}</span>
+            <div class="review-slider">
+                <div class="review-track" #reviewTrack>
+                    <div class="review-card" *ngFor="let review of reviews">
+                        <p class="review-text">“{{ review.text }}”</p>
+                        <h5 class="review-name">{{ review.name }}</h5>
+                        <span class="review-role">{{ review.role }}</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
     <section class="footer">

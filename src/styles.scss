@@ -71,3 +71,58 @@
 .slide {
   transition-delay: var(--delay, 0s);
 }
+/* ================================
+   Global Center Diagonal Button
+   ================================ */
+
+.diagonal-btn {
+  position: relative;
+  overflow: hidden;
+  background: var(--btn-bg, #c1284e);
+  color: var(--btn-text, #fff);
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Text layer */
+.diagonal-btn span {
+  position: relative;
+  z-index: 5;
+}
+
+/* Animation panels */
+.diagonal-btn::before,
+.diagonal-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 70%;
+  height: 100%;
+  background: var(--btn-hover-bg, #001b49);
+  transform: skewX(-45deg) scaleX(0);
+  transition: transform 1s ease;
+}
+
+/* Center split */
+.diagonal-btn::before {
+  right: 50%;
+  transform-origin: right center;
+}
+
+.diagonal-btn::after {
+  left: 50%;
+  transform-origin: left center;
+}
+
+/* Hover trigger */
+.diagonal-btn:hover::before,
+.diagonal-btn:hover::after {
+  transform: skewX(-45deg) scaleX(1);
+}
+.btn-red { --btn-bg:#d72c57; --btn-hover-bg:#001b49; }
+.btn-dark { --btn-bg:#000; --btn-hover-bg:#fff; --btn-text:#000; }
+.btn-brand { --btn-bg:#002e62; --btn-hover-bg:#ab7280; }
