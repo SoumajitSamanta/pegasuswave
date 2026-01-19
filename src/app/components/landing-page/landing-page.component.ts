@@ -104,26 +104,23 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
   track!: ElementRef<HTMLDivElement>;
 
   logos = [
-    './assets/img/placeholder.jpg',
-    './assets/img/placeholder.jpg',
-    './assets/img/placeholder.jpg',
-    './assets/img/placeholder.jpg',
-    './assets/img/placeholder.jpg',
-    './assets/img/placeholder.jpg',
-    './assets/img/placeholder.jpg',
-    './assets/img/placeholder.jpg',
-    './assets/img/placeholder.jpg',
-    './assets/img/placeholder.jpg',
-    './assets/img/placeholder.jpg',
-    './assets/img/placeholder.jpg',
-    './assets/img/placeholder.jpg',
-    './assets/img/placeholder.jpg',
-    './assets/img/placeholder.jpg',
-    './assets/img/placeholder.jpg',
+
+    './assets/img/logos/riot games.png',
+    './assets/img/logos/Equinix_logo.svg',
+    './assets/img/logos/fastly.svg',
+    './assets/img/logos/azure-icon.svg',
+    './assets/img/logos/digitalocean-official.svg',
+    './assets/img/logos/cloudflare-official.svg',
+    './assets/img/logos/meta.svg',
+    './assets/img/logos/akamai.svg',
+   './assets/img/logos/aws.svg',
+   './assets/img/logos/google.png',
+   './assets/img/logos/netflix.png',
+  './assets/img/logos/SLTMobitel_Logo.svg',
   ];
 
   private position = 0;
-  private speed = 0.4; // px per frame
+  private speed = 1; // px per frame
 
   animate(): void {
     const trackEl = this.track.nativeElement;
